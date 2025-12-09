@@ -25,11 +25,12 @@
             updateStats();
 
 
-         // Form submission
-            studentForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                addStudent();
-            });
+                 // Form submission
+            // studentForm.addEventListener('submit', function(e) {
+            //     e.preventDefault();
+            //     addStudent();
+                // });
+                console.log(studentForm)
 
         // Search functionality
             searchBtn.addEventListener('click', function() {
@@ -91,7 +92,7 @@
             }
         }
 
-        function saveStudent(id, fullName, matricule, email, dateOfBirth, gender, phoneNumber, school, department, photoUrl) {
+       export  function saveStudent(id, fullName, matricule, email, dateOfBirth, gender, phoneNumber, school, department, photoUrl) {
             const newStudent = {
                 id,
                 fullName,
@@ -106,8 +107,9 @@
                 registrationDate: new Date().toISOString()
             };
 
-             students.push(newStudent);
-            localStorage.setItem('students', JSON.stringify(students));
+           students.push(newStudent);
+           
+       localStorage.setItem('students', JSON.stringify(students));
 
             // Reset form
             studentForm.reset();
@@ -120,6 +122,8 @@
 
             // Show success message
             alert('Student registered successfully!');
+            window.location.reload()
+            window.location.href = 'home.html'
         }
 
         // Render students list
