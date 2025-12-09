@@ -8,7 +8,8 @@
 
 </head>
 <body>
-    <div class="login-container">
+    <section id="loginPage">
+        <div class="login-container">
         <h1 class="login-title">Student Hub</h1>
         
         <form id="loginForm">
@@ -24,18 +25,26 @@
             
             <button type="submit" class="btn">Login</button>
             
+            
             <div id="error" class="error">
                 Invalid credentials
             </div>
         </form>
-
+<button id="signUp" class="btn">SignUp</button>
 
     </div>
+    </section>
+    
 
     <script>
         // Update these with your credentials
         const adminUsername = "admin";
         const adminPassword = "admin123";
+
+        let studNames = ['name1','name2'];
+        let studPasswords = ['1','2'];
+        let studInfor = [studNames, studPasswords]
+        console.log(studInfor[0][0],studInfor[1][0])
 
         // Login functionality
         document.getElementById('loginForm').addEventListener('submit', function(e) {
@@ -55,7 +64,15 @@
                 document.getElementById('password').value = '';
             }
         });
-
+signUp = ()=>{
+    const signUpBtn = document.getElementById('signUp')
+        
+        signUpBtn.addEventListener('click', (event)=>{
+            document.getElementById('loginPage').style.display = 'none'
+        })
+}
+//signUP button function call
+       signUp()
         
     </script>
 </body>
