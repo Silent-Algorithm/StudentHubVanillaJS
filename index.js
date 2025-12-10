@@ -3,7 +3,7 @@
             let currentFilter = 'all';
 
             // Dom Elements
-                    const studentForm = document.getElementById('studentForm');
+                    const studentForm = document.getElementsByClassName('studentForm');
                     const studentsContainer = document.getElementById('studentsContainer');
                     const studentGallery = document.getElementById('studentGallery');
                     const searchInput = document.getElementById('searchInput');
@@ -29,8 +29,8 @@
             // studentForm.addEventListener('submit', function(e) {
             //     e.preventDefault();
             //     addStudent();
-                // });
-                console.log(studentForm)
+            //     });
+            //     console.log(studentForm)
 
         // Search functionality
             searchBtn.addEventListener('click', function() {
